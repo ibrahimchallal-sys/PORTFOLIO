@@ -2,8 +2,18 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
+// Get the base path based on environment
+const getBasePath = () => {
+  // For Vercel deployment
+  if (process.env.VERCEL === "1") {
+    return "/";
+  }
+  // Default for other deployments
+  return "/";
+};
+
 export default defineConfig({
-  base: "/", // Changed from using env.VITE_REPO_NAME to just "/"
+  base: getBasePath(),
   plugins: [react(), tailwindcss()],
   server: {
     open: true,

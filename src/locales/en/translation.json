@@ -1,0 +1,176 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "process": "Process",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "introduction": {
+    "hello": "Hello, I'm",
+    "name": "Ibrahim Challal",
+    "age": "19 years old",
+    "description": "I'm a student UI/UX Designer and Developer I strive to build immersive and beautiful web applications through carefully crafted code and user-centric design.",
+    "sayHello": "Say Hello!",
+    "viewWork": "View My Work"
+  },
+  "profile": {
+    "title": "Currently pursuing my second year in digital full-stack development",
+    "description": "I'm currently learning to design and build digital experiences, focusing on stylish websites, simple web services, and user-friendly interfaces. I enjoy exploring modern tools and techniques to create clean, responsive designs that feel professional and intuitive.",
+    "projects": "My Projects",
+    "downloadCV": "Download CV"
+  },
+  "workProcess": {
+    "title": "Work Process",
+    "description1": "Driven by design and powered by code, I create digital interfaces that feel intuitive and perform seamlessly. Every layout, animation, and component is crafted with intention — merging usability with visual clarity,",
+    "description2": "I blend clean design with efficient code to build engaging, user-friendly web experiences that stand out.",
+    "steps": {
+      "research": {
+        "title": "Research",
+        "description": "Design meets function in every pixel, blending clarity with intuitive motion."
+      },
+      "analyze": {
+        "title": "Analyze",
+        "description": "Crafting clean, thoughtful interfaces where form flows seamlessly into function and clarity."
+      },
+      "design": {
+        "title": "Design",
+        "description": "I design seamless digital experiences with precision, purpose, and a touch of elegance."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "I craft digital products where thoughtful design meets performance-driven, responsive development."
+      }
+    }
+  },
+  "portfolio": {
+    "title": "My Creative Work",
+    "description": "Explore my portfolio showcasing innovative designs and cutting-edge development solutions that blend creativity with functionality.",
+    "categories": {
+      "all": "All",
+      "webDevelopment": "Web Development",
+      "uiUxDesign": "UI/UX Design",
+      "mobileApp": "Mobile App"
+    },
+    "viewMore": "View More",
+    "viewLess": "View Less",
+    "projectModal": {
+      "technologies": "Technologies Used",
+      "viewProject": "View Project",
+      "viewCode": "View Code"
+    }
+  },
+  "projects": {
+
+    "adminDashboard": {
+      "title": "Product Admin Dashboard",
+      "description": "Designed an intuitive dashboard for product management, emphasizing clarity and user efficiency with modern design principles.",
+      "tags": ["Figma", "UI Design", "User Research"]
+    },
+    "adminPanel": {
+      "title": "Modern Admin Panel",
+      "description": "Developed a modern admin panel with a focus on usability and seamless navigation for end users with contemporary aesthetics.",
+      "tags": ["Design System", "Prototyping", "Testing"]
+    },
+    "ecommerce": {
+      "title": "E-commerce Solution",
+      "description": "A full-featured e-commerce platform with advanced filtering, cart functionality, and secure payment processing.",
+      "tags": ["React", "Redux", "Stripe API"]
+    },
+    "fitnessTracker": {
+      "title": "Fitness Tracker",
+      "description": "A mobile application that helps users track their workouts, nutrition, and progress with personalized recommendations.",
+      "tags": ["React Native", "Firebase", "HealthKit"]
+    },
+    "portfolioWebsite": {
+      "title": "Portfolio Website",
+      "description": "A responsive portfolio website with modern design, smooth animations, and optimized performance.",
+      "tags": ["React", "Tailwind CSS", "Framer Motion"]
+    },
+    "cssbattle": {
+      "title": "Cssbattle",
+      "description": "A CSS-based coding challenge platform where developers can practice and improve their CSS skills through creative exercises.",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    }
+  },
+  "profession": {
+    "title": "What I do?",
+    "description1": "I specialize in designing user experiences, crafting engaging interfaces, and building robust web applications that deliver value and usability.",
+    "description2": "My approach combines creativity and technical expertise to deliver solutions that are both visually appealing and highly functional for users.",
+    "roles": {
+      "uiUxDesign": {
+        "title": "UI/UX Design",
+        "description": "I design intuitive and enjoyable experiences by understanding user needs, conducting research, and creating wireframes and prototypes that enhance usability."
+      },
+      "fullStack": {
+        "title": "Full Stack Development",
+        "description": "I build responsive and high-performance web applications using modern technologies, ensuring accessibility, scalability, and maintainability."
+      },
+      "uiDesign": {
+        "title": "UI Design",
+        "description": "Crafting visually appealing and consistent interfaces, focusing on layout, color, and typography."
+      },
+      "uxResearch": {
+        "title": "UX Research",
+        "description": "Understanding user needs through research and creating seamless user experiences."
+      },
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Creating interactive user interfaces with modern frameworks like React and Vue."
+      },
+      "backend": {
+        "title": "Backend Development",
+        "description": "Building robust server-side applications, APIs, and databases with Node.js, Python, or Java."
+      }
+    },
+    "sayHello": "Say Hello!"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Have a project in mind or want to discuss potential opportunities? Feel free to reach out and I'll get back to you as soon as possible.",
+    "infoTitle": "Contact Information",
+    "address": {
+      "address": "Address",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Casablanca",
+      "emailAddress": "i.challal9970@gmail.com",
+      "phoneNumber": "+212600001716"
+    },
+    "follow": "Follow Me",
+    "responseTime": "Response Time: Within 24 hours",
+    "formTitle": "Send Me a Message",
+    "formDescription": "I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "namePlaceholder": "John Doe",
+      "emailPlaceholder": "john@example.com",
+      "subjectPlaceholder": "How can I help you?",
+      "messagePlaceholder": "Tell me about your project...",
+      "send": "Send Message",
+      "successMessage": "Thank you for your message! I'll get back to you soon."
+    }
+  },
+  "footer": {
+    "brandDescription": "Creating digital experiences with precision and passion. Transforming ideas into elegant, functional solutions.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "email": "contact@ibrahimchallal.com",
+    "phone": "+1 (123) 456-7890",
+    "location": "San Francisco, CA",
+    "copyright": "Ibrahim Challal. All rights reserved."
+  },
+  "socialMedia": {
+    "dribbble": "Dribbble",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "preloader": {
+    "loading": "Loading portfolio..."
+  }
+}

@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { router } from "./routes/Router";
 import { RouterProvider } from "react-router-dom";
-import "../src/../index.css";
+import "../index.css";
+import './i18n';
+import Preloader from "./components/ui/Preloader";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <>
+      <Preloader isLoading={isLoading} setIsLoading={setIsLoading} />
+      {!isLoading && (
+        <React.StrictMode>
+          <RouterProvider router={router} />
+        </React.StrictMode>
+      )}
+    </>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

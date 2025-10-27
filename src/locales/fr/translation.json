@@ -1,0 +1,180 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "process": "Processus",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "introduction": {
+    "hello": "Bonjour, je suis",
+    "name": "Ibrahim Challal",
+    "age": "19 ans",
+    "description": "Je suis un étudiant Designer UI/UX et Développeur. Je m'efforce de créer des applications web immersives et magnifiques grâce à du code soigneusement conçu et un design centré sur l'utilisateur.",
+    "sayHello": "Dire Bonjour !",
+    "viewWork": "Voir mon travail"
+  },
+  "profile": {
+    "title": "Actuellement en deuxième année de développement full-stack digital",
+    "description": "J'apprends actuellement à concevoir et construire des expériences numériques, en me concentrant sur des sites web stylés, des services web simples et des interfaces conviviales. J'aime explorer des outils et techniques modernes pour créer des designs propres et réactifs qui semblent professionnels et intuitifs.",
+    "projects": "Mes Projets",
+    "downloadCV": "Télécharger le CV"
+  },
+  "workProcess": {
+    "title": "Processus de Travail",
+    "description1": "Guidé par le design et alimenté par le code, je crée des interfaces numériques qui se sentent intuitives et fonctionnent de manière fluide. Chaque mise en page, animation et composant est conçu avec intention — alliant convivialité et clarté visuelle,",
+    "description2": "Je mêle design épuré et code efficace pour créer des expériences web engageantes et conviviales qui se démarquent.",
+    "steps": {
+      "research": {
+        "title": "Recherche",
+        "description": "Le design rencontre la fonction dans chaque pixel, mêlant clarté et mouvement intuitif."
+      },
+      "analyze": {
+        "title": "Analyse",
+        "description": "Création d'interfaces propres et réfléchies où la forme s'écoule de manière fluide vers la fonction et la clarté."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Je conçois des expériences numériques fluides avec précision, but et une touche d'élégance."
+      },
+      "launch": {
+        "title": "Lancement",
+        "description": "Je crée des produits numériques où le design réfléchi rencontre le développement réactif axé sur la performance."
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Mon Travail Créatif",
+    "description": "Explorez mon portfolio présentant des designs innovants et des solutions de développement de pointe qui allient créativité et fonctionnalité.",
+    "categories": {
+      "all": "Tout",
+      "webDevelopment": "Développement Web",
+      "uiUxDesign": "Design UI/UX",
+      "mobileApp": "Application Mobile"
+    },
+    "viewMore": "Voir Plus",
+    "viewLess": "Voir Moins",
+    "projectModal": {
+      "technologies": "Technologies Utilisées",
+      "viewProject": "Voir le Projet",
+      "viewCode": "Voir le Code"
+    }
+  },
+  "projects": {
+    "together": {
+      "title": "TOGETHER ! - Plateforme Freelance",
+      "description": "Une plateforme web complète où les vendeurs numériques peuvent présenter leurs compétences et vendre des produits et services numériques avec une expérience utilisateur fluide.",
+      "tags": ["React", "Node.js", "MongoDB"]
+    },
+    "adminDashboard": {
+      "title": "Tableau de Bord Admin Produit",
+      "description": "Conception d'un tableau de bord intuitif pour la gestion de produits, mettant l'accent sur la clarté et l'efficacité utilisateur avec des principes de design modernes.",
+      "tags": ["Figma", "Design UI", "Recherche Utilisateur"]
+    },
+    "adminPanel": {
+      "title": "Panneau d'Administration Moderne",
+      "description": "Développement d'un panneau d'administration moderne axé sur la convivialité et la navigation fluide pour les utilisateurs finaux avec une esthétique contemporaine.",
+      "tags": ["Système de Design", "Prototypage", "Test"]
+    },
+    "ecommerce": {
+      "title": "Solution E-commerce",
+      "description": "Une plateforme e-commerce complète avec filtrage avancé, fonctionnalité de panier et traitement de paiement sécurisé.",
+      "tags": ["React", "Redux", "API Stripe"]
+    },
+    "fitnessTracker": {
+      "title": "Suivi Fitness",
+      "description": "Une application mobile qui aide les utilisateurs à suivre leurs entraînements, leur nutrition et leurs progrès avec des recommandations personnalisées.",
+      "tags": ["React Native", "Firebase", "HealthKit"]
+    },
+    "portfolioWebsite": {
+      "title": "Site Web Portfolio",
+      "description": "Un site web portfolio réactif avec design moderne, animations fluides et performance optimisée.",
+      "tags": ["React", "Tailwind CSS", "Framer Motion"]
+    },
+    "cssbattle": {
+      "title": "Cssbattle",
+      "description": "Une plateforme de défis de codage basée sur CSS où les développeurs peuvent pratiquer et améliorer leurs compétences CSS grâce à des exercices créatifs.",
+      "tags": ["HTML", "CSS", "JavaScript"]
+    }
+  },
+  "profession": {
+    "title": "Que fais-je ?",
+    "description1": "Je me spécialise dans la conception d'expériences utilisateur, la création d'interfaces engageantes et la construction d'applications web robustes qui offrent valeur et convivialité.",
+    "description2": "Mon approche combine créativité et expertise technique pour offrir des solutions à la fois visuellement attrayantes et hautement fonctionnelles pour les utilisateurs.",
+    "roles": {
+      "uiUxDesign": {
+        "title": "Design UI/UX",
+        "description": "Je conçois des expériences intuitives et agréables en comprenant les besoins des utilisateurs, en menant des recherches et en créant des maquettes et prototypes qui améliorent la convivialité."
+      },
+      "fullStack": {
+        "title": "Développement Full Stack",
+        "description": "Je construis des applications web réactives et performantes en utilisant des technologies modernes, garantissant l'accessibilité, l'évolutivité et la maintenabilité."
+      },
+      "uiDesign": {
+        "title": "Design UI",
+        "description": "Création d'interfaces visuellement attrayantes et cohérentes, en se concentrant sur la mise en page, la couleur et la typographie."
+      },
+      "uxResearch": {
+        "title": "Recherche UX",
+        "description": "Compréhension des besoins des utilisateurs par la recherche et création d'expériences utilisateur fluides."
+      },
+      "frontend": {
+        "title": "Développement Frontend",
+        "description": "Création d'interfaces utilisateur interactives avec des frameworks modernes comme React et Vue."
+      },
+      "backend": {
+        "title": "Développement Backend",
+        "description": "Construction d'applications côté serveur robustes, d'API et de bases de données avec Node.js, Python ou Java."
+      }
+    },
+    "sayHello": "Dire Bonjour !"
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "description": "Vous avez un projet en tête ou souhaitez discuter d'opportunités potentielles ? N'hésitez pas à me contacter et je vous répondrai dès que possible.",
+    "infoTitle": "Informations de Contact",
+    "address": {
+      "address": "Adresse",
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Casablanca",
+      "emailAddress": "i.challal9970@gmail.com",
+      "phoneNumber": "+212600001716"
+    },
+    "follow": "Suivez-moi",
+    "responseTime": "Temps de Réponse : Sous 24 heures",
+    "formTitle": "Envoyez-moi un Message",
+    "formDescription": "Je suis toujours ouvert pour discuter de nouveaux projets, d'idées créatives ou d'opportunités pour faire partie de votre vision.",
+    "form": {
+      "name": "Nom Complet",
+      "email": "Adresse Email",
+      "subject": "Sujet",
+      "message": "Votre Message",
+      "namePlaceholder": "Jean Dupont",
+      "emailPlaceholder": "jean@exemple.com",
+      "subjectPlaceholder": "Comment puis-je vous aider ?",
+      "messagePlaceholder": "Parlez-moi de votre projet...",
+      "send": "Envoyer le Message",
+      "successMessage": "Merci pour votre message ! Je vous répondrai bientôt."
+    }
+  },
+  "footer": {
+    "brandDescription": "Création d'expériences numériques avec précision et passion. Transformation des idées en solutions élégantes et fonctionnelles.",
+    "quickLinks": "Liens Rapides",
+    "contactInfo": "Informations de Contact",
+    "email": "contact@ibrahimchallal.com",
+    "phone": "+1 (123) 456-7890",
+    "location": "San Francisco, CA",
+    "copyright": "Ibrahim Challal. Tous droits réservés."
+  },
+  "socialMedia": {
+    "dribbble": "Dribbble",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "preloader": {
+    "loading": "Chargement du portfolio..."
+  }
+}
