@@ -729,6 +729,28 @@ button:focus {
   font-weight: 600;
 }
 
+/* Status badge styles */
+.project-status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f59e0b; /* yellow-500 */
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Purple background status for project cards */
+.project-card-front .project-image-container-flip,
+.project-card-back .project-content-back {
+  position: relative;
+  overflow: hidden;
+}
+
 /* Single Section Card Styles */
 .project-card-single {
   background: white;

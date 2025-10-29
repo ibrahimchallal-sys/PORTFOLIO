@@ -156,6 +156,7 @@
       "subjectPlaceholder": "Comment puis-je vous aider ?",
       "messagePlaceholder": "Parlez-moi de votre projet...",
       "send": "Envoyer le Message",
+      "sending": "Envoi en cours...",
       "successMessage": "Merci pour votre message ! Je vous répondrai bientôt."
     }
   },

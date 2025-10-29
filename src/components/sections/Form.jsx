@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { insertMessage } from '../../services/supabase';
 
 const telegramSVG = (
   <svg
@@ -21,6 +22,7 @@ const Form = () => {
   const formRef = useRef(null);
   const inputRefs = useRef([]);
   const [focusedInputs, setFocusedInputs] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Add entrance animation
   useEffect(() => {
@@ -73,16 +75,38 @@ const Form = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission logic would go here
-    alert(t('contact.form.successMessage') || "Thank you for your message! I'll get back to you soon.");
+    
+    // Get form data
+    const formData = new FormData(e.target);
+    const messageData = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    };
+
+    setIsSubmitting(true);
+    
+    // Insert message into Supabase
+    const result = await insertMessage(messageData);
+    
+    if (result.success) {
+      // Reset form without alert
+      e.target.reset();
+    } else {
+      // Handle error silently or with visual feedback
+      console.error('Error submitting message:', result.error);
+    }
+    
+    setIsSubmitting(false);
     
     // Add a success animation to the button
     const button = document.getElementById('submit-button');
     if (button) {
       gsap.to(button, {
-        backgroundColor: "#10B981",
+        backgroundColor: result.success ? "#10B981" : "#EF4444",
         duration: 0.3,
         onComplete: () => {
           setTimeout(() => {
@@ -114,6 +138,7 @@ const Form = () => {
             <input
               type="text"
               id="name"
+              name="name"
               placeholder={t('contact.form.namePlaceholder')}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-picto-primary focus:border-picto-primary transition-all duration-300"
               required
@@ -130,6 +155,7 @@ const Form = () => {
             <input
               type="email"
               id="email"
+              name="email"
               placeholder={t('contact.form.emailPlaceholder')}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-picto-primary focus:border-picto-primary transition-all duration-300"
               required
@@ -147,6 +173,7 @@ const Form = () => {
           <input
             type="text"
             id="subject"
+            name="subject"
             placeholder={t('contact.form.subjectPlaceholder')}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-picto-primary focus:border-picto-primary transition-all duration-300"
             required
@@ -162,6 +189,7 @@ const Form = () => {
           </label>
           <textarea
             id="message"
+            name="message"
             rows="5"
             placeholder={t('contact.form.messagePlaceholder')}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-picto-primary focus:border-picto-primary transition-all duration-300 resize-none"
@@ -178,8 +206,9 @@ const Form = () => {
           className="btn btn-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-purple-700 transition-all duration-300 flex items-center gap-2 hover:-translate-y-1"
           onMouseEnter={() => handleButtonHover(true)}
           onMouseLeave={() => handleButtonHover(false)}
+          disabled={isSubmitting}
         >
-          {t('contact.form.send')}
+          {isSubmitting ? t('contact.form.sending') || 'Sending...' : t('contact.form.send')}
           {telegramSVG}
         </button>
       </form>

@@ -152,6 +152,7 @@
       "subjectPlaceholder": "How can I help you?",
       "messagePlaceholder": "Tell me about your project...",
       "send": "Send Message",
+      "sending": "Sending...",
       "successMessage": "Thank you for your message! I'll get back to you soon."
     }
   },

@@ -5,10 +5,13 @@ import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 
 const Projects = ({ data }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const cardRef = useRef(null);
+
+  // Check if this is the CSS Battle project
+  const isCssBattle = data?.title && data.title.includes("Cssbattle");
 
   // Add entrance animation when component mounts
   useEffect(() => {
@@ -72,6 +75,15 @@ const Projects = ({ data }) => {
                 className="project-image-flip"
               />
               
+              {/* Purple background with status text for non-CSS Battle projects (only visible when not flipped) */}
+              {!isCssBattle && !isFlipped && (
+                <div className="absolute inset-0 bg-purple-600 bg-opacity-80 flex items-center justify-center">
+                  <span className="text-white text-xl font-bold text-center px-4">
+                    {i18n.language === 'fr' ? 'EN COURS' : 'WORKING ON IT'}
+                  </span>
+                </div>
+              )}
+              
               {/* Tags at Bottom */}
               <div className="project-tags-flip">
                 {data?.tags?.map((tag, index) => (
@@ -93,29 +105,40 @@ const Projects = ({ data }) => {
                 {data?.title}
               </h3>
               
-              <p className="project-description-back">
-                {data?.description}
-              </p>
+              {/* Purple background with status text for non-CSS Battle projects (only visible when not flipped) */}
+              {!isCssBattle && !isFlipped && (
+                <div className="absolute inset-0 bg-purple-600 bg-opacity-80 flex items-center justify-center">
+                  <span className="text-white text-2xl font-bold text-center px-4">
+                    {i18n.language === 'fr' ? 'EN COURS' : 'WORKING ON IT'}
+                  </span>
+                </div>
+              )}
               
-              <div className="project-actions-back">
-                <a 
-                  href={data?.link} 
-                  className="project-btn-back project-btn-view-back"
-                  aria-label="View project"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <FontAwesomeIcon icon={faEye} />
-                  {t('portfolio.viewMore')}
-                </a>
-                <a 
-                  href={data?.link} 
-                  className="project-btn-back project-btn-code-back"
-                  aria-label="View code"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <FontAwesomeIcon icon={faCode} />
-                  {t('portfolio.projectModal.viewCode')}
-                </a>
+              <div className="relative z-10">
+                <p className="project-description-back">
+                  {data?.description}
+                </p>
+                
+                <div className="project-actions-back">
+                  <a 
+                    href={data?.link} 
+                    className="project-btn-back project-btn-view-back"
+                    aria-label="View project"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FontAwesomeIcon icon={faEye} />
+                    {t('portfolio.viewMore')}
+                  </a>
+                  <a 
+                    href={data?.link} 
+                    className="project-btn-back project-btn-code-back"
+                    aria-label="View code"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FontAwesomeIcon icon={faCode} />
+                    {t('portfolio.projectModal.viewCode')}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
