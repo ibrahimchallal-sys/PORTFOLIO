@@ -1,11 +1,5 @@
 import { Link } from "react-scroll";
 import { useTranslation } from 'react-i18next';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
 
 /* Footer navLinks */
 const navItems = [
@@ -21,72 +15,15 @@ const copyrightYear = new Date().getFullYear();
 
 const Footer = () => {
   const { t } = useTranslation();
-  const footerRef = useRef(null);
-  const brandRef = useRef(null);
-  const linksRef = useRef(null);
-  const contactRef = useRef(null);
-  const copyrightRef = useRef(null);
-
-  // Add scroll-triggered animations
-  useEffect(() => {
-    if (footerRef.current && brandRef.current && linksRef.current && 
-        contactRef.current && copyrightRef.current) {
-      // Set initial states
-      gsap.set([brandRef.current, linksRef.current, contactRef.current], { opacity: 0, y: 30 });
-      gsap.set(copyrightRef.current, { opacity: 0, y: 20 });
-      
-      // Create scroll-triggered animation
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 90%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
-      });
-      
-      // Animate elements in sequence
-      tl.to(brandRef.current, { 
-        opacity: 1, 
-        y: 0, 
-        duration: 0.6, 
-        ease: "power2.out" 
-      })
-      .to(linksRef.current, { 
-        opacity: 1, 
-        y: 0, 
-        duration: 0.6, 
-        ease: "power2.out" 
-      }, "-=0.4")
-      .to(contactRef.current, { 
-        opacity: 1, 
-        y: 0, 
-        duration: 0.6, 
-        ease: "power2.out" 
-      }, "-=0.4")
-      .to(copyrightRef.current, { 
-        opacity: 1, 
-        y: 0, 
-        duration: 0.6, 
-        ease: "power2.out" 
-      }, "-=0.3");
-    }
-    
-    // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
 
   return (
     <footer 
-      ref={footerRef}
       className="bg-gradient-to-r from-[#2A374A] to-[#1a2535] text-white pt-16 pb-8"
     >
       <div className="content">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Brand Section */}
-          <div ref={brandRef} className="md:col-span-1">
+          <div className="md:col-span-1">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 rounded-full bg-picto-primary flex items-center justify-center mr-3">
                 <span className="text-white font-bold text-xl">IC</span>
@@ -99,7 +36,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div ref={linksRef} className="md:col-span-1">
+          <div className="md:col-span-1">
             <h4 className="text-xl font-semibold mb-6">{t('footer.quickLinks')}</h4>
             <div className="grid grid-cols-2 gap-3">
               {navItems.map((item) => (
@@ -118,7 +55,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div ref={contactRef} className="md:col-span-1">
+          <div className="md:col-span-1">
             <h4 className="text-xl font-semibold mb-6">{t('footer.contactInfo')}</h4>
             <ul className="space-y-4 text-gray-300">
               <li className="flex items-start">
@@ -154,7 +91,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright Bar */}
-        <div ref={copyrightRef} className="border-t border-gray-700 pt-8 mt-8">
+        <div className="border-t border-gray-700 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               &copy; {copyrightYear} {t('footer.copyright')}

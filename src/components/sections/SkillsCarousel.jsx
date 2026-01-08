@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { memo } from "react";
 import { 
   faHtml5, 
   faCss3Alt, 
@@ -17,13 +17,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase, faCloud, faProjectDiagram, faChartLine, faLeaf, faChartBar, faChartPie } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './skills-carousel.css';
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
-
-const SkillsCarousel = () => {
+const SkillsCarousel = memo(() => {
   const skills = [
     { name: "HTML", icon: faHtml5, style: { color: "#e34f26" } },
     { name: "CSS", icon: faCss3Alt, style: { color: "#1572b6" } },
@@ -47,90 +43,8 @@ const SkillsCarousel = () => {
     { name: "Chart.js", icon: faChartBar, style: { color: "#ff6384" } }
   ];
 
-  const carouselRef = useRef(null);
-  const animationRef = useRef();
-  const positionRef = useRef(0);
-  const skillsRef = useRef(null);
-  const skillItemsRef = useRef([]);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const speed = 2;
-
-    // Set initial position
-    carousel.style.transform = `translateX(0px)`;
-
-    const animate = () => {
-      positionRef.current += speed;
-      
-      // Calculate the width of one set of skills
-      const setWidth = carousel.scrollWidth / 2;
-      
-      // Apply modulo to create seamless looping
-      const newPosition = positionRef.current % setWidth;
-      
-      carousel.style.transform = `translateX(${-newPosition}px)`;
-      carousel.style.transition = 'none';
-      animationRef.current = requestAnimationFrame(animate);
-    };
-    
-    animationRef.current = requestAnimationFrame(animate);
-    
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, []);
-
-  // Add scroll-triggered animation for the skills section with staggered effect
-  useEffect(() => {
-    if (skillsRef.current) {
-      gsap.set(skillsRef.current, { opacity: 0, y: 30 });
-      
-      ScrollTrigger.create({
-        trigger: skillsRef.current,
-        start: "top 85%",
-        end: "bottom 15%",
-        toggleActions: "play none none reverse",
-        onEnter: () => {
-          gsap.to(skillsRef.current, {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power2.out"
-          });
-          
-          // Staggered animation for skill items
-          if (skillItemsRef.current.length > 0) {
-            gsap.fromTo(skillItemsRef.current,
-              { opacity: 0, y: 20, scale: 0.8 },
-              {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: "back.out(1.7)",
-                delay: 0.3
-              }
-            );
-          }
-        }
-      });
-    }
-    
-    // Cleanup
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
-
   return (
     <div 
-      ref={skillsRef}
       className="py-8 w-full overflow-hidden bg-gradient-to-r from-purple-50 to-indigo-50"
     >
       <div className="max-w-6xl mx-auto px-4">
@@ -139,19 +53,17 @@ const SkillsCarousel = () => {
         </h3>
       </div>
       
-      <div className="relative h-24 flex items-center">
+      <div className="relative h-24 flex items-center overflow-hidden">
         <div 
-          ref={carouselRef}
-          className="absolute flex whitespace-nowrap"
+          className="absolute flex whitespace-nowrap animate-loop-scroll"
         >
           {/* First set of skills */}
           {skills.map((skill, index) => (
             <div 
               key={index} 
-              ref={el => skillItemsRef.current[index] = el}
               className="mx-4 flex"
             >
-              <div className="bg-white rounded-xl shadow-md px-4 py-3 flex flex-col items-center justify-center min-w-[120px] transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="bg-white rounded-xl shadow-md px-4 py-3 flex flex-col items-center justify-center min-w-[120px]">
                 <FontAwesomeIcon 
                   icon={skill.icon} 
                   className="w-8 h-8 text-2xl mb-2"
@@ -166,10 +78,9 @@ const SkillsCarousel = () => {
           {skills.map((skill, index) => (
             <div 
               key={`dup-${index}`} 
-              ref={el => skillItemsRef.current[index + skills.length] = el}
               className="mx-4 flex"
             >
-              <div className="bg-white rounded-xl shadow-md px-4 py-3 flex flex-col items-center justify-center min-w-[120px] transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div className="bg-white rounded-xl shadow-md px-4 py-3 flex flex-col items-center justify-center min-w-[120px]">
                 <FontAwesomeIcon 
                   icon={skill.icon} 
                   className="w-8 h-8 text-2xl mb-2"
@@ -183,6 +94,6 @@ const SkillsCarousel = () => {
       </div>
     </div>
   );
-};
+});
 
 export default SkillsCarousel;

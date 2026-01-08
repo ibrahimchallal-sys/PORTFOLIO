@@ -1,8 +1,11 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Loading from "../components/ui/loading/Loading";
+import ProtectedRoute from "../components/ProtectedRoute";
 const Home = lazy(() => import("../pages/Home"));
 const Main = lazy(() => import("../layouts/Main"));
+const AdminLogin = lazy(() => import("../pages/AdminLogin"));
+const AdminDashboard = lazy(() => import("../pages/AdminDashboard"));
 
 // Get the basename for different deployment environments
 const getBasename = () => {
@@ -31,13 +34,35 @@ export const router = createBrowserRouter(
         },
         {
           path: "home",
-          element: <Home></Home>,
+          element: (
+            <Suspense fallback={<Loading />}>
+              <Home />
+            </Suspense>
+          ),
         },
         {
           path: "*",
           element: <Navigate to="/home" replace />,
         },
       ],
+    },
+    {
+      path: "/adminspace",
+      element: (
+        <Suspense fallback={<Loading />}>
+          <AdminLogin />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/adminspace/dashboard",
+      element: (
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <AdminDashboard />
+          </ProtectedRoute>
+        </Suspense>
+      ),
     },
   ],
   { basename: getBasename() }

@@ -1,68 +1,11 @@
-import { useState, useRef, useEffect } from "react";
-import gsap from 'gsap';
+import { useState } from "react";
 
 const WorkSteps = ({ data, customStyle }) => {
   const [hover, setHover] = useState(false);
-  const cardRef = useRef(null);
-  const iconRef = useRef(null);
 
-  // Add entrance animation with stagger effect
-  useEffect(() => {
-    if (cardRef.current) {
-      gsap.fromTo(cardRef.current, 
-        { opacity: 0, y: 20, scale: 0.9 },
-        { 
-          opacity: 1, 
-          y: 0, 
-          scale: 1,
-          duration: 0.6, 
-          ease: "back.out(1.7)",
-          delay: Math.random() * 0.3 // Stagger effect
-        }
-      );
-    }
-  }, []);
-
-  // Add hover animations for the card and icon
+  // Hover function for state management only
   const handleHover = (isEnter) => {
     setHover(isEnter);
-    
-    if (cardRef.current) {
-      if (isEnter) {
-        gsap.to(cardRef.current, {
-          y: -10,
-          scale: 1.03,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      } else {
-        gsap.to(cardRef.current, {
-          y: 0,
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      }
-    }
-    
-    // Icon animation
-    if (iconRef.current) {
-      if (isEnter) {
-        gsap.to(iconRef.current, {
-          rotation: 15,
-          scale: 1.2,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      } else {
-        gsap.to(iconRef.current, {
-          rotation: 0,
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-      }
-    }
   };
 
   // Simple icon component based on icon type
@@ -107,16 +50,14 @@ const WorkSteps = ({ data, customStyle }) => {
 
   return (
     <div
-      ref={cardRef}
-      className={`rounded-xl border-2 border-purple-100 hover:border-purple-300 bg-gradient-to-br from-white to-purple-50 hover:from-purple-50 hover:to-purple-100 shadow-lg hover:shadow-xl ease-out duration-300 flex flex-col items-center justify-center text-center p-6 w-full ${customStyle}`}
+      className={`rounded-xl border-2 border-purple-100 hover:border-purple-300 bg-gradient-to-br from-white to-purple-50 hover:from-purple-50 hover:to-purple-100 shadow-lg hover:shadow-xl flex flex-col items-center justify-center text-center p-6 w-full ${customStyle}`}
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
     >
       <div
-        ref={iconRef}
         className={`w-12 h-12 ${
           hover ? "bg-picto-primary" : "bg-[#EDD8FF80]"
-        } text-center center rounded-md flex items-center justify-center mx-auto transition-all duration-300`}
+        } text-center center rounded-md flex items-center justify-center mx-auto`}
       >
         {renderIcon()}
       </div>

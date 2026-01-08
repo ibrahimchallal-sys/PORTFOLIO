@@ -2,7 +2,7 @@
 @plugin "daisyui";
 
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cupcake;
+  themes: light --default;
 }
 
 /* RTL support for Arabic */
@@ -140,10 +140,6 @@ body {
   width: 100%;
   overflow-x: hidden;
   background-color: #fafafa;
-}
-
-[data-theme="dark"] body {
-  background-color: #111827;
 }
 
 .content {

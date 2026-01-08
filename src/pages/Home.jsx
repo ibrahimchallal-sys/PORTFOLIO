@@ -1,16 +1,19 @@
-import Introduction from "../components/sections/Introduction";
-import Profile from "../components/sections/Profile";
-import WorkProcess from "../components/sections/WorkProcess";
-import Portfolio from "../components/sections/Portfolio";
-import Profession from "../components/sections/Profession";
-import Contact from "../components/sections/Contact";
-import SkillsCarousel from "../components/sections/SkillsCarousel";
 import ParticleBackground from "../components/ui/ParticleBackground";
 import "../../index.css";
+import { lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Lazy load section components
+const Introduction = lazy(() => import("../components/sections/Introduction"));
+const Profile = lazy(() => import("../components/sections/Profile"));
+const WorkProcess = lazy(() => import("../components/sections/WorkProcess"));
+const Portfolio = lazy(() => import("../components/sections/Portfolio"));
+const Profession = lazy(() => import("../components/sections/Profession"));
+const Contact = lazy(() => import("../components/sections/Contact"));
+const SkillsCarousel = lazy(() => import("../components/sections/SkillsCarousel"));
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -75,32 +78,42 @@ const Home = () => {
           className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(153,41,251,0.05)_0%,_transparent_70%)]"
         ></div>
         <div className="content relative z-10 py-12 w-full">
-          <Introduction />
-          <SkillsCarousel />
-          <Profile />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Introduction />
+            <SkillsCarousel />
+            <Profile />
+          </Suspense>
         </div>
       </div>
       
       {/* Work Process Section - balanced spacing */}
       <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <WorkProcess />
+        <Suspense fallback={<div>Loading...</div>}>
+          <WorkProcess />
+        </Suspense>
       </div>
       
       {/* Portfolio Section - balanced spacing */}
-      <div className="py-16">
-        <Portfolio />
+      <div className="py-16 bg-white">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Portfolio />
+        </Suspense>
       </div>
       
 
       
       {/* Services/Profession Section - balanced spacing */}
       <div className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <Profession />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Profession />
+        </Suspense>
       </div>
       
       {/* Contact Section - balanced spacing */}
-      <div className="py-16">
-        <Contact />
+      <div className="py-16 bg-white">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Contact />
+        </Suspense>
       </div>
     </div>
   );

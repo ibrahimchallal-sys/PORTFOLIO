@@ -1,0 +1,26 @@
+/* CSS for Skills Carousel Scrolling Animation */
+
+@keyframes loopScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-loop-scroll {
+  display: flex;
+  animation: loopScroll 30s linear infinite;
+  width: 200%; /* Double the width to accommodate duplicate items */
+}
+
+/* Alternative animation speed - slower */
+.animate-loop-scroll.slow {
+  animation-duration: 45s;
+}
+
+/* Faster animation */
+.animate-loop-scroll.fast {
+  animation-duration: 15s;
+}

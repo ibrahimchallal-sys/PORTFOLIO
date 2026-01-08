@@ -104,7 +104,7 @@ const NavBar = () => {
                       spy={true}
                       offset={-80}
                       activeClass="text-picto-primary font-bold underline"
-                      className={`hover:text-picto-primary px-5 py-3 mx-1 cursor-pointer`}
+                      className={`hover:text-picto-primary px-5 py-3 mx-1 cursor-pointer text-gray-900`}
                     >
                       {item.name}
                     </Link>
@@ -142,7 +142,7 @@ const NavBar = () => {
             <div className="flex items-center justify-center h-10 w-10 rounded-2xl bg-picto-primary text-white font-bold text-lg">
               IC
             </div>
-            <p className="text-xl sm:text-2xl my-auto ms-3 font-semibold">
+            <p className="text-xl sm:text-2xl my-auto ms-3 font-semibold text-gray-900">
               Ibrahim challal
             </p>
           </Link>
