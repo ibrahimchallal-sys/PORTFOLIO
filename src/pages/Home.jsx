@@ -10,6 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 const Introduction = lazy(() => import("../components/sections/Introduction"));
 const Profile = lazy(() => import("../components/sections/Profile"));
 const WorkProcess = lazy(() => import("../components/sections/WorkProcess"));
+const CVDisplay = lazy(() => import("../components/sections/CVDisplay"));
 const Portfolio = lazy(() => import("../components/sections/Portfolio"));
 const Profession = lazy(() => import("../components/sections/Profession"));
 const Contact = lazy(() => import("../components/sections/Contact"));
@@ -90,6 +91,13 @@ const Home = () => {
       <div className="py-16 bg-gradient-to-b from-white to-gray-50">
         <Suspense fallback={<div>Loading...</div>}>
           <WorkProcess />
+        </Suspense>
+      </div>
+      
+      {/* CV Display Section - balanced spacing */}
+      <div className="py-16 bg-white">
+        <Suspense fallback={<div>Loading...</div>}>
+          <CVDisplay />
         </Suspense>
       </div>
       

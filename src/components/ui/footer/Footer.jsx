@@ -6,9 +6,10 @@ const navItems = [
   { id: 1, nameKey: "navbar.home", url: "introduction" },
   { id: 2, nameKey: "navbar.about", url: "profile" },
   { id: 3, nameKey: "navbar.process", url: "work-process" },
-  { id: 4, nameKey: "navbar.portfolio", url: "portfolio" },
-  { id: 5, nameKey: "navbar.services", url: "services" },
-  { id: 6, nameKey: "navbar.contact", url: "contact" },
+  { id: 4, nameKey: "navbar.cv", url: "cv-display" },
+  { id: 5, nameKey: "navbar.portfolio", url: "portfolio" },
+  { id: 6, nameKey: "navbar.services", url: "services" },
+  { id: 7, nameKey: "navbar.contact", url: "contact" },
 ];
 
 const copyrightYear = new Date().getFullYear();

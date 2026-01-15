@@ -42,8 +42,9 @@ const NavBar = () => {
     { id: 1, name: t('navbar.home'), url: "introduction" },
     { id: 2, name: t('navbar.about'), url: "profile" },
     { id: 3, name: t('navbar.process'), url: "work-process" },
-    { id: 4, name: t('navbar.portfolio'), url: "portfolio" },
-    { id: 5, name: t('navbar.services'), url: "services" },
+    { id: 4, name: t('navbar.cv'), url: "cv-display" },
+    { id: 5, name: t('navbar.portfolio'), url: "portfolio" },
+    { id: 6, name: t('navbar.services'), url: "services" },
   ];
 
   const handleMenuClick = () => {
